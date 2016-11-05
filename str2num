@@ -12,8 +12,8 @@ int string2int(char *str)
 int main(void)
 {
 	int number;
-	number=string2int("-123451234");
-	if(number==INT_MAX)
+	number=string2int("1234");
+	if(number>=INT_MAX)
 	{
 		printf("It is too big\n");
 		return 0;
