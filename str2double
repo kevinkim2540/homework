@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+double string2double(char *str)
+{
+	double a;
+	a=atof(str);
+	return a;
+}
+
+int main(void)
+{
+	double number;
+	number=string2double("1234.56");
+	printf("number=%f\n",number);
+	return 0;
+}
