@@ -1,24 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
 int string2int(char *str)
 {
-	int a;
-	a=atoi(str);
-	return a;
+	int a=1,b=0;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '+')
+		{
+			a = 1;
+			*str++;
+		}
+		else
+		{
+			a = -1;
+			*str++;
+		}
+	}
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		b = b * 10 + (*str - '0');
+		*str++;
+	}
+	return a*b;
 }
 
 int main(void)
 {
 	int number;
-	number=string2int("1234");
-	if(number>=INT_MAX)
-	{
-		printf("It is too big\n");
-		return 0;
-	}
-	else
-		printf("number=%d\n",number);
-		return 0;
+	number = string2int("-1234");
+	printf("number=%d\n", number);
+	return 0;
 }
